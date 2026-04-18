@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Monish Anand Jeyaprakash — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C0C0F;
+    --bg2: #131318;
+    --bg3: #1A1A22;
+    --border: rgba(255,255,255,0.07);
+    --border-hover: rgba(255,255,255,0.15);
+    --text: #F0EEF8;
+    --text-muted: rgba(240,238,248,0.5);
+    --text-dim: rgba(240,238,248,0.3);
+    --accent: #7B6FFF;
+    --accent2: #5DCAA5;
+    --accent3: #F0997B;
+    --accent-glow: rgba(123,111,255,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 4rem;
+    background: rgba(12,12,15,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ── Hero ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+  }
+  .hero-glow {
+    position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(123,111,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; max-width: 900px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(123,111,255,0.1); border: 0.5px solid rgba(123,111,255,0.3);
+    border-radius: 100px; padding: 6px 16px; margin-bottom: 2rem;
+    font-size: 0.8rem; color: #a89eff; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+  h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05; letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  h1 .highlight { color: var(--accent); }
+  .hero-sub {
+    font-size: 1.15rem; color: var(--text-muted); max-width: 560px;
+    font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    padding: 0.8rem 2rem; border-radius: 8px;
+    text-decoration: none; font-weight: 500; font-size: 0.95rem;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 0.5px solid var(--border-hover); color: var(--text-muted);
+    padding: 0.8rem 2rem; border-radius: 8px;
+    text-decoration: none; font-weight: 400; font-size: 0.95rem;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--text-muted); transform: translateY(-1px); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem; border-top: 0.5px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 2rem;
+    color: var(--text); letter-spacing: -0.02em;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2px; }
+
+  /* ── Sections ── */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: clamp(2rem, 3.5vw, 2.8rem); letter-spacing: -0.025em;
+    margin-bottom: 0.75rem; line-height: 1.15;
+  }
+  .section-desc { color: var(--text-muted); max-width: 500px; margin-bottom: 3.5rem; font-weight: 300; }
+
+  /* ── About ── */
+  #about { background: var(--bg2); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-text p { color: var(--text-muted); font-weight: 300; margin-bottom: 1rem; line-height: 1.9; }
+  .about-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .about-card {
+    background: var(--bg3); border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: border-color 0.2s;
+  }
+  .about-card:hover { border-color: var(--border-hover); }
+  .about-card-icon {
+    width: 38px; height: 38px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .about-card-icon.blue { background: rgba(55,138,221,0.15); }
+  .about-card-icon.green { background: rgba(93,202,165,0.12); }
+  .about-card-icon.amber { background: rgba(240,153,123,0.12); }
+  .about-card h4 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .about-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+  /* ── Experience ── */
+  .exp-timeline { position: relative; padding-left: 1.5rem; }
+  .exp-timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 0.5px; background: var(--border);
+  }
+  .exp-item {
+    position: relative; padding-left: 2rem; margin-bottom: 3rem;
+  }
+  .exp-item::before {
+    content: ''; position: absolute; left: -1.75rem; top: 6px;
+    width: 8px; height: 8px; border-radius: 50%;
+    border: 1.5px solid var(--accent); background: var(--bg);
+  }
+  .exp-date { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
+  .exp-role { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .exp-company { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tag {
+    font-size: 0.75rem; padding: 4px 12px; border-radius: 100px;
+    border: 0.5px solid var(--border); color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+  .exp-bullets { padding-left: 1.2rem; color: var(--text-muted); font-weight: 300; }
+  .exp-bullets li { margin-bottom: 0.4rem; font-size: 0.92rem; }
+
+  /* ── Projects ── */
+  #projects { background: var(--bg2); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card {
+    background: var(--bg3); border: 0.5px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    transition: border-color 0.25s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    opacity: 0; transition: opacity 0.25s;
+  }
+  .project-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+  .project-card:hover::before { opacity: 1; }
+  .project-year { font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
+  .project-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3; }
+  .project-desc { color: var(--text-muted); font-size: 0.88rem; font-weight: 300; line-height: 1.75; margin-bottom: 1.25rem; }
+  .project-award {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.75rem; color: #e2b96b;
+    background: rgba(226,185,107,0.1); border: 0.5px solid rgba(226,185,107,0.25);
+    border-radius: 100px; padding: 4px 12px; margin-bottom: 1rem;
+  }
+
+  /* ── Skills ── */
+  .skills-section { }
+  .skills-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .skill-category {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+  }
+  .skill-cat-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-pill {
+    font-size: 0.8rem; padding: 5px 14px; border-radius: 100px;
+    border: 0.5px solid var(--border); color: var(--text-muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-pill:hover { border-color: var(--accent); color: var(--text); }
+  .skill-pill.highlight { border-color: rgba(123,111,255,0.4); color: #a89eff; background: rgba(123,111,255,0.07); }
+
+  /* ── Certs ── */
+  #certifications { background: var(--bg); }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .cert-card {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: border-color 0.2s;
+  }
+  .cert-card:hover { border-color: var(--border-hover); }
+  .cert-icon {
+    width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  }
+  .cert-icon.ms { background: rgba(55,138,221,0.15); color: #5ba3e8; }
+  .cert-icon.oracle { background: rgba(213,85,50,0.12); color: #e07b60; }
+  .cert-icon.nptel { background: rgba(93,202,165,0.12); color: var(--accent2); }
+  .cert-name { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem; line-height: 1.4; }
+  .cert-issuer { font-size: 0.78rem; color: var(--text-dim); }
+
+  /* ── Education ── */
+  .edu-items { display: flex; flex-direction: column; gap: 1.25rem; max-width: 700px; }
+  .edu-item {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 1.5rem 1.75rem;
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;
+  }
+  .edu-school { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 0.3rem; }
+  .edu-degree { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; }
+  .edu-grade { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--accent2); flex-shrink: 0; }
+  .edu-year { font-size: 0.75rem; color: var(--text-dim); text-align: right; margin-top: 4px; }
+
+  /* ── Contact ── */
+  #contact {
+    background: var(--bg2); border-top: 0.5px solid var(--border);
+    text-align: center;
+  }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 0.5px solid var(--border-hover); color: var(--text-muted);
+    padding: 0.75rem 1.75rem; border-radius: 8px;
+    text-decoration: none; font-size: 0.9rem; font-weight: 400;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-link:hover { color: var(--text); border-color: var(--accent); }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center; padding: 2rem 4rem;
+    font-size: 0.8rem; color: var(--text-dim);
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.25s; }
+  .d3 { animation-delay: 0.4s; }
+  .d4 { animation-delay: 0.55s; }
+  .d5 { animation-delay: 0.7s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    #hero { padding: 7rem 1.5rem 3rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-stats { gap: 2rem; }
+    .edu-item { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">M<span>.</span>AJ</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up d1">
+      <span class="hero-badge-dot"></span>
+      Available for opportunities
+    </div>
+    <h1 class="fade-up d2">
+      Monish Anand<br><span class="highlight">Jeyaprakash</span>
+    </h1>
+    <p class="hero-sub fade-up d3">
+      Assistant System Engineer at Tata Consultancy Services — focused on cloud infrastructure, platform operations, Azure, DevOps, and building systems that scale.
+    </p>
+    <div class="hero-ctas fade-up d4">
+      <a href="#projects" class="btn-primary">View Projects →</a>
+      <a href="#contact" class="btn-ghost">Get in touch</a>
+    </div>
+    <div class="hero-stats fade-up d5">
+      <div>
+        <div class="stat-num">9</div>
+        <div class="stat-label">Months at TCS</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div>
+        <div class="stat-num">8</div>
+        <div class="stat-label">MS Certifications</div>
+      </div>
+      <div>
+        <div class="stat-num">8.5</div>
+        <div class="stat-label">CGPA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="section-label">About me</p>
+      <h2>Systems thinker. Builder. Engineer.</h2>
+      <p>I work at Tata Consultancy Services focusing on cloud infrastructure, platform operations, and enterprise application environments. My work is centered around understanding how large-scale systems run in production — with exposure to Azure, DevOps tooling, cybersecurity, and data engineering.</p>
+      <p>I hold a B.E. in Computer Science from Sathyabama Institute of Science & Technology, with a strong foundation in Java, SQL, Python, Linux, and core CS fundamentals built through coursework, projects, and continuous upskilling.</p>
+      <p>I believe strong engineers understand how systems are <em>built, operated, secured, and scaled</em> — not just how code is written.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="about-card-icon blue">☁️</div>
+        <div>
+          <h4>Cloud & Platform Ops</h4>
+          <p>Azure, Azure DevOps, Application Insights, production monitoring & incident management.</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon green">⚙️</div>
+        <div>
+          <h4>DevOps & Automation</h4>
+          <p>CI/CD pipelines, PowerShell scripting, automated health-check alerts, ServiceNow workflows.</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon amber">🔧</div>
+        <div>
+          <h4>IoT & Hardware-Software</h4>
+          <p>Raspberry Pi systems, RFID/NFC, IR emulation, Linux-based interfaces, system-level scripting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="experience">
+  <p class="section-label">Career</p>
+  <h2>Experience</h2>
+  <p class="section-desc">Building production-grade systems and growing across cloud, DevOps, and platform engineering.</p>
+
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">Aug 2025 – Present · Full-time</div>
+      <div class="exp-role">Assistant System Engineer</div>
+      <div class="exp-company">Tata Consultancy Services · Chennai, Tamil Nadu</div>
+      <ul class="exp-bullets">
+        <li>Production support & monitoring of warehouse and logistics applications for H&M — order processing, allocation, and downstream integrations.</li>
+        <li>Monitored application health and exceptions using Azure Application Insights to ensure smooth system operations.</li>
+        <li>Handled P3/P4 incidents and supported P2 issues by analyzing logs, identifying patterns, and coordinating with development, SAP, and Kafka teams.</li>
+        <li>Developed automation scripts to monitor critical services and trigger email alerts for failures; implemented scheduled health-check alerts via Task Scheduler.</li>
+        <li>Used SSMS to run queries and analyze data/logs; contributed to incident reporting and Power BI dashboards exposure.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">Microsoft Azure</span>
+        <span class="tag">Azure Application Insights</span>
+        <span class="tag">SQL Server</span>
+        <span class="tag">PowerShell</span>
+        <span class="tag">ServiceNow</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Incident Management</span>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Jun 2023 – Oct 2023 · Internship</div>
+      <div class="exp-role">Project Intern (Ex-HCL)</div>
+      <div class="exp-company">HCLTech · Tamil Nadu</div>
+      <ul class="exp-bullets">
+        <li>Developed a full-stack MERN web application for real-time quiz delivery and performance analytics.</li>
+        <li>Implemented JWT-based authentication with hashed passwords, role-based access, and automatic quiz evaluation.</li>
+        <li>Built frontend in React, REST APIs with Node.js/Express, database design in MongoDB.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">React.js</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Express.js</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">JWT</span>
+        <span class="tag">MERN Stack</span>
+        <span class="tag">Ant Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <p class="section-label">Work</p>
+  <h2>Projects</h2>
+  <p class="section-desc">From IoT hardware systems to full-stack web apps — built with curiosity and shipped with care.</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-year">Dec 2025 – Present · TCS / H&M</div>
+      <div class="project-title">H&M Production Support & Automation</div>
+      <div class="project-desc">Monitoring and maintaining warehouse & logistics applications for H&M. Built automation scripts for critical service monitoring and email alerting; worked with Azure Application Insights, SSMS, and Power BI for incident response.</div>
+      <div class="exp-tags">
+        <span class="tag">Azure</span><span class="tag">SSMS</span><span class="tag">PowerShell</span><span class="tag">Power BI</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">Sep 2024 – Apr 2025 · Academic</div>
+      <div class="project-award">🏆 Best Paper Award</div>
+      <div class="project-title">DIGIWIZARD — Modular Multi-Dev Tablet</div>
+      <div class="project-desc">IoT and hardware-software integrated system inspired by Flipper Zero, built on Raspberry Pi 5. Supports IR and RFID/NFC emulation with a Linux-based KDE Plasma touchscreen interface. Led system architecture, component selection, documentation, and conference presentation.</div>
+      <div class="exp-tags">
+        <span class="tag">Raspberry Pi 5</span><span class="tag">Linux</span><span class="tag">IR Emulation</span><span class="tag">RFID/NFC</span><span class="tag">Bash</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">Jan 2024 – Jun 2024 · Academic</div>
+      <div class="project-title">AutoTrack — RFID Attendance System</div>
+      <div class="project-desc">RFID-based attendance management system using Raspberry Pi to automate tracking. RC522 reader scans RFID cards; attendance data processed in real time via Python and stored in MySQL. Supports user registration, timestamped logging, and structured data retrieval.</div>
+      <div class="exp-tags">
+        <span class="tag">Raspberry Pi</span><span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">RFID RC522</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">Jun 2023 – Oct 2023 · HCLTech Internship</div>
+      <div class="project-title">Online Real-Time Assessment & Learning</div>
+      <div class="project-desc">Full-stack MERN quiz platform with role-based access, JWT auth, admin dashboards, auto-evaluation, and real-time result reporting. Built REST APIs, MongoDB schemas, and React frontend with Ant Design components following Agile methodology.</div>
+      <div class="exp-tags">
+        <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Express.js</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">May 2023 · Academic</div>
+      <div class="project-title">Package Tracking System</div>
+      <div class="project-desc">GUI-based courier tracking system built with Python and Tkinter. Supports user registration, login, and real-time package tracking using reference/mobile numbers. SQLite3 database stores user and product delivery data.</div>
+      <div class="exp-tags">
+        <span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">SQLite3</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">Apr 2023 · Academic</div>
+      <div class="project-title">Tic-Tac-Toe — Java Swing</div>
+      <div class="project-desc">Two-player Tic-Tac-Toe game using Java Swing. Implements player turn handling, move validation, win/tie detection across all combinations, and a clean 3×3 grid UI using JFrame, JPanel, JButton, and ActionListener event handling.</div>
+      <div class="exp-tags">
+        <span class="tag">Java</span><span class="tag">Java Swing</span><span class="tag">OOP</span><span class="tag">Event-Driven</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <p class="section-label">Expertise</p>
+  <h2>Skills</h2>
+  <p class="section-desc">Across cloud, backend, hardware, and data tooling.</p>
+  <div class="skills-categories">
+    <div class="skill-category">
+      <div class="skill-cat-title">☁️ Cloud & DevOps</div>
+      <div class="skill-pills">
+        <span class="skill-pill highlight">Microsoft Azure</span>
+        <span class="skill-pill highlight">Azure DevOps</span>
+        <span class="skill-pill highlight">CI/CD Pipelines</span>
+        <span class="skill-pill">App Insights</span>
+        <span class="skill-pill">Oracle Cloud</span>
+        <span class="skill-pill">Cloud Computing</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🗄️ Data & Databases</div>
+      <div class="skill-pills">
+        <span class="skill-pill highlight">SQL Server (SSMS)</span>
+        <span class="skill-pill highlight">MySQL</span>
+        <span class="skill-pill">MongoDB</span>
+        <span class="skill-pill">SQLite</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Oracle DB</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">💻 Languages</div>
+      <div class="skill-pills">
+        <span class="skill-pill highlight">Python</span>
+        <span class="skill-pill highlight">Java</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Bash/Shell</span>
+        <span class="skill-pill">PowerShell</span>
+        <span class="skill-pill">SQL</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🌐 Web & Frameworks</div>
+      <div class="skill-pills">
+        <span class="skill-pill highlight">React.js</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Express.js</span>
+        <span class="skill-pill">Spring Boot</span>
+        <span class="skill-pill">JWT</span>
+        <span class="skill-pill">MERN Stack</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🔌 IoT & Hardware</div>
+      <div class="skill-pills">
+        <span class="skill-pill highlight">Raspberry Pi</span>
+        <span class="skill-pill highlight">Linux</span>
+        <span class="skill-pill">RFID (RC522)</span>
+        <span class="skill-pill">IR Emulation</span>
+        <span class="skill-pill">IoT Systems</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🔧 Tools & Ops</div>
+      <div class="skill-pills">
+        <span class="skill-pill highlight">Git</span>
+        <span class="skill-pill highlight">ServiceNow</span>
+        <span class="skill-pill">Incident Mgmt</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Tableau</span>
+        <span class="skill-pill">Microsoft Excel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Certifications ── -->
+<section id="certifications">
+  <p class="section-label">Credentials</p>
+  <h2>Certifications</h2>
+  <p class="section-desc">Validated expertise across cloud, data, and engineering domains.</p>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon ms">🔷</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: DevOps Engineer Expert</div>
+        <div class="cert-issuer">Microsoft · Issued Apr 2026 · Expires Apr 2027</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ms">🔷</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Azure AI Fundamentals</div>
+        <div class="cert-issuer">Microsoft · Issued Apr 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ms">🔷</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Azure Developer Associate</div>
+        <div class="cert-issuer">Microsoft · Issued Mar 2026 · Expires Mar 2027</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ms">🔷</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Azure Administrator Associate</div>
+        <div class="cert-issuer">Microsoft · Issued Mar 2026 · Expires Mar 2027</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ms">🔷</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Power BI Data Analyst Associate</div>
+        <div class="cert-issuer">Microsoft · Issued Feb 2026 · Expires Feb 2027</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon ms">🔷</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Azure Fundamentals</div>
+        <div class="cert-issuer">Microsoft · Issued Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon oracle">🔶</div>
+      <div>
+        <div class="cert-name">Administer Database on Oracle Cloud</div>
+        <div class="cert-issuer">Oracle · Issued Mar 2024</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon oracle">🔶</div>
+      <div>
+        <div class="cert-name">Java Development on Oracle Cloud</div>
+        <div class="cert-issuer">Oracle · Issued Sep 2023</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon nptel">📘</div>
+      <div>
+        <div class="cert-name">Introduction to Operating Systems</div>
+        <div class="cert-issuer">NPTEL · Issued Oct 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Education ── -->
+<section id="education" style="background: var(--bg2); border-top: 0.5px solid var(--border);">
+  <p class="section-label">Academic</p>
+  <h2>Education</h2>
+  <p class="section-desc">Strong CS fundamentals from one of Chennai's leading engineering institutions.</p>
+  <div class="edu-items">
+    <div class="edu-item">
+      <div>
+        <div class="edu-school">Sathyabama Institute of Science & Technology</div>
+        <div class="edu-degree">B.E. Computer Science & Engineering · Jul 2021 – Jun 2025</div>
+      </div>
+      <div>
+        <div class="edu-grade">8.5</div>
+        <div class="edu-year">CGPA</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-school">Sri Sankara Vidhyashramam</div>
+        <div class="edu-degree">HSC, Bio-Maths · Jun 2020 – Apr 2021</div>
+      </div>
+      <div>
+        <div class="edu-grade">88%</div>
+        <div class="edu-year">Class XII</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-school">Sri Sankara Vidhyashramam</div>
+        <div class="edu-degree">SSLC, General Studies · Jun 2018 – Apr 2019</div>
+      </div>
+      <div>
+        <div class="edu-grade">87%</div>
+        <div class="edu-year">Class X</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get in touch</p>
+    <h2>Let's connect</h2>
+    <p class="section-desc" style="margin: 1rem auto 0; text-align: center;">
+      Open to cloud engineering, platform ops, and DevOps roles. Feel free to reach out!
+    </p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/monish6324" target="_blank" class="contact-link">
+        🔗 LinkedIn
+      </a>
+      <a href="mailto:monish6324@example.com" class="contact-link">
+        ✉️ Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built with care · Monish Anand Jeyaprakash · Chennai, Tamil Nadu
+</footer>
+
+</body>
+</html>
