@@ -482,18 +482,21 @@ section { padding: var(--gap) 0; }
 }
 .cert-badge:hover { transform: translateY(-2px); border-color: var(--border-hover); background: var(--bg-3); }
 .cert-badge-img {
-  width: 60px; height: 60px;
-  display: flex; align-items: center; justify-content: center;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none !important;
 }
-.cert-badge-img svg {
-  width: 100%; height: 100%;
+.cert-badge-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
-  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
-  transition: filter 0.25s, transform 0.25s;
+  transition: transform 0.25s ease;
 }
-.cert-badge:hover .cert-badge-img svg {
-  filter: drop-shadow(0 4px 16px rgba(99,102,241,0.3));
+.cert-badge:hover .cert-badge-img img {
   transform: scale(1.06);
 }
 .cert-badge-code { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; color: var(--text-2); letter-spacing: 0.04em; }
@@ -1123,90 +1126,43 @@ footer {
           <div class="cert-badges">
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-f1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e3a5f"/><stop offset="100%" stop-color="#0078D4"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-f1)" stroke="#50a0e8" stroke-width="1.5"/>
-                  <polygon points="60,18 96,38 96,82 60,102 24,82 24,38" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-                  <path d="M40 72 L60 36 L80 72 Z" fill="white" opacity="0.92"/>
-                  <circle cx="60" cy="79" r="7" fill="white" opacity="0.92"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">FUNDAMENTALS</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="AZ-900 Badge">
               </div>
               <div class="cert-badge-code">AZ-900</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-a1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0c3259"/><stop offset="100%" stop-color="#0078D4"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-a1)" stroke="#3b8fd4" stroke-width="1.5"/>
-                  <rect x="38" y="40" width="44" height="32" rx="5" fill="none" stroke="white" stroke-width="2.2" opacity="0.9"/>
-                  <rect x="46" y="50" width="28" height="3" rx="1.5" fill="white" opacity="0.85"/>
-                  <rect x="46" y="57" width="20" height="3" rx="1.5" fill="white" opacity="0.6"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">ADMINISTRATOR</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/336eebfc-0ac3-4583-8424-e1aabf5731e8/image.png" alt="AZ-104 Badge">
               </div>
               <div class="cert-badge-code">AZ-104</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-d1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0c3259"/><stop offset="100%" stop-color="#0078D4"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-d1)" stroke="#3b8fd4" stroke-width="1.5"/>
-                  <path d="M44 68 C44 55 76 55 76 68 L76 76 L44 76 Z" fill="white" opacity="0.85"/>
-                  <circle cx="60" cy="48" r="11" fill="white" opacity="0.92"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">DEVELOPER</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/63316b60-f62d-4e51-aacc-c23cb850089c/azure-developer-associate-600x600.png" alt="AZ-204 Badge">
               </div>
               <div class="cert-badge-code">AZ-204</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-e1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06254a"/><stop offset="100%" stop-color="#005BA1"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-e1)" stroke="#0078D4" stroke-width="1.5"/>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
-                  <polygon points="60,36 76,64 44,64" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                  <rect x="52" y="64" width="16" height="16" rx="2" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">SOLUTIONS ARCH</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/azure-solutions-architect-expert-600x600.png" alt="AZ-305 Badge">
               </div>
               <div class="cert-badge-code">AZ-305</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-dv1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06254a"/><stop offset="100%" stop-color="#005BA1"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-dv1)" stroke="#0078D4" stroke-width="1.5"/>
-                  <circle cx="60" cy="54" r="18" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                  <path d="M51 54 L57 62 L72 46" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">DEVOPS ENGINEER</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png" alt="AZ-400 Badge">
               </div>
               <div class="cert-badge-code">AZ-400</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-s1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0c3259"/><stop offset="100%" stop-color="#0078D4"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-s1)" stroke="#3b8fd4" stroke-width="1.5"/>
-                  <path d="M60 36 L77 46 L77 62 C77 72 69 79 60 82 C51 79 43 72 43 62 L43 46 Z" fill="none" stroke="white" stroke-width="2.2" opacity="0.9"/>
-                  <path d="M53 59 L58 64 L69 53" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">SECURITY ENGINEER</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/1ad16b6f-2da5-4167-9f07-313a77f6a3ea/azure-security-engineer-associate600x600.png" alt="AZ-500 Badge">
               </div>
               <div class="cert-badge-code">AZ-500</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="az-n1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0c3259"/><stop offset="100%" stop-color="#0078D4"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#az-n1)" stroke="#3b8fd4" stroke-width="1.5"/>
-                  <ellipse cx="60" cy="56" rx="22" ry="12" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                  <circle cx="60" cy="56" r="5" fill="white" opacity="0.92"/>
-                  <line x1="38" y1="56" x2="30" y2="56" stroke="white" stroke-width="2" opacity="0.7"/>
-                  <line x1="82" y1="56" x2="90" y2="56" stroke="white" stroke-width="2" opacity="0.7"/>
-                  <text x="60" y="100" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">NETWORK ENGINEER</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/c3a2e51d-7984-48cc-a4cb-88d4e8487037/azure-network-engineer-associate-600x600.png" alt="AZ-700 Badge">
               </div>
               <div class="cert-badge-code">AZ-700</div>
             </div>
@@ -1225,62 +1181,31 @@ footer {
           <div class="cert-badges">
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="gh-1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#21262d"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#gh-1)" stroke="#30363d" stroke-width="1.5"/>
-                  <path fill-rule="evenodd" d="M60 34C50 34 42 42 42 52c0 8 5.2 14.8 12.4 17.2.9.17 1.2-.39 1.2-.87v-3.3c-5 1.1-6.1-2.1-6.1-2.1-.8-2.1-2-2.65-2-2.65-1.65-1.12.12-1.1.12-1.1 1.82.13 2.78 1.87 2.78 1.87 1.62 2.77 4.24 1.97 5.28 1.5.16-1.17.63-1.97 1.15-2.42-4.02-.46-8.24-2.01-8.24-8.94 0-1.97.7-3.59 1.87-4.86-.19-.46-.81-2.3.18-4.79 0 0 1.52-.49 5 1.86A17.4 17.4 0 0160 43.4c1.54.01 3.08.21 4.52.6 3.47-2.35 5-1.86 5-1.86.99 2.49.37 4.33.18 4.79 1.16 1.27 1.87 2.89 1.87 4.86 0 6.95-4.23 8.48-8.26 8.93.65.56 1.23 1.67 1.23 3.37 0 2.43-.02 4.38-.02 4.97 0 .48.33 1.04 1.24.87C72.8 66.78 78 60 78 52c0-10-8-18-18-18z" fill="white" opacity="0.9"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">FOUNDATIONS</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/024d0122-724d-4c5a-bd83-cfe3c4b7a073/image.png" alt="GH-100 Badge">
               </div>
               <div class="cert-badge-code">GH-100</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="gh-2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#21262d"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#gh-2)" stroke="#30363d" stroke-width="1.5"/>
-                  <rect x="40" y="40" width="40" height="28" rx="4" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                  <path d="M48 54 L54 48 L60 54 L66 48 L72 54" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">ACTIONS</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/89efc3e7-842b-4790-b09b-9ea5efc71ec3/image.png" alt="GH-200 Badge">
               </div>
               <div class="cert-badge-code">GH-200</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="gh-3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#21262d"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#gh-3)" stroke="#30363d" stroke-width="1.5"/>
-                  <circle cx="60" cy="52" r="18" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                  <path d="M52 52 L57 58 L70 45" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">COPILOT</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/2f7b0627-48a0-4894-8d46-3245bdfe0463/image.png" alt="GH-300 Badge">
               </div>
               <div class="cert-badge-code">GH-300</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="gh-4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#21262d"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#gh-4)" stroke="#30363d" stroke-width="1.5"/>
-                  <circle cx="60" cy="48" r="10" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                  <path d="M47 68 C47 60 73 60 73 68" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                  <rect x="42" y="56" width="36" height="18" rx="4" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">ADMIN</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/image.png" alt="GH-400 Badge">
               </div>
               <div class="cert-badge-code">GH-400</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="gh-5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#21262d"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#gh-5)" stroke="#30363d" stroke-width="1.5"/>
-                  <line x1="46" y1="66" x2="46" y2="52" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.7"/>
-                  <line x1="60" y1="66" x2="60" y2="44" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
-                  <line x1="74" y1="66" x2="74" y2="38" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">ADVANCED</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/89adb979-c9af-40fb-8d61-d61f948ba7e6/image.png" alt="GH-500 Badge">
               </div>
               <div class="cert-badge-code">GH-500</div>
             </div>
@@ -1300,57 +1225,33 @@ footer {
             <div class="cert-badges">
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="ai1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#ai1)" stroke="#818cf8" stroke-width="1.5"/>
-                    <circle cx="60" cy="50" r="12" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                    <circle cx="44" cy="44" r="5" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
-                    <circle cx="76" cy="44" r="5" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
-                    <line x1="49" y1="44" x2="55" y2="47" stroke="white" stroke-width="1.5" opacity="0.5"/>
-                    <line x1="71" y1="44" x2="65" y2="47" stroke="white" stroke-width="1.5" opacity="0.5"/>
-                    <circle cx="60" cy="50" r="4" fill="white" opacity="0.9"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">AI FUNDAMENTALS</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/4136ced8-75d5-4afb-8677-40b6236e2672/azure-ai-fundamentals-600x600.png" alt="AI-900 Badge">
                 </div>
                 <div class="cert-badge-code">AI-900</div>
               </div>
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="ai2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#ai2)" stroke="#818cf8" stroke-width="1.5"/>
-                    <rect x="40" y="42" width="40" height="28" rx="5" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                    <path d="M48 56 L54 50 L60 56 L66 50 L72 56" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">AI ENGINEER</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/61f56aa4-16fd-403c-90bc-1d90dba1fa99/azure-ai-engineer-associate-600x600.png" alt="AI-102 Badge">
                 </div>
                 <div class="cert-badge-code">AI-102</div>
               </div>
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="dp9" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#dp9)" stroke="#818cf8" stroke-width="1.5"/>
-                    <ellipse cx="60" cy="48" rx="18" ry="10" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
-                    <ellipse cx="60" cy="58" rx="18" ry="10" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
-                    <circle cx="60" cy="48" r="4" fill="white" opacity="0.9"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">DATA FUNDAMENTALS</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/70eb1e3f-d4de-4377-a062-b20fb29594ea/azure-data-fundamentals-600x600.png" alt="DP-900 Badge">
                 </div>
                 <div class="cert-badge-code">DP-900</div>
               </div>
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="dp7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#dp7)" stroke="#818cf8" stroke-width="1.5"/>
-                    <rect x="42" y="62" width="10" height="14" rx="1.5" fill="white" opacity="0.65"/>
-                    <rect x="55" y="52" width="10" height="24" rx="1.5" fill="white" opacity="0.8"/>
-                    <rect x="68" y="42" width="10" height="34" rx="1.5" fill="white" opacity="0.92"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">DATA ANALYST</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/afc5dc5b-e03f-464a-b9bf-08f94b4282a9/image.png" alt="DP-700 Badge">
                 </div>
                 <div class="cert-badge-code">DP-700</div>
+              </div>
+              <div class="cert-badge">
+                <div class="cert-badge-img">
+                  <img src="https://images.credly.com/size/340x340/images/7a6f0d96-0c2f-4945-b6e4-000438a52de3/image.png" alt="PL-300 Badge">
+                </div>
+                <div class="cert-badge-code">PL-300</div>
               </div>
             </div>
           </div>
@@ -1365,39 +1266,19 @@ footer {
             <div class="cert-badges">
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="sc1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a2e2e"/><stop offset="100%" stop-color="#0e7490"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#sc1)" stroke="#22d3ee" stroke-width="1.5"/>
-                    <path d="M60 35 L78 46 L78 64 C78 75 70 82 60 85 C50 82 42 75 42 64 L42 46 Z" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                    <path d="M52 60 L57 65 L70 52" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">SEC ARCHITECT</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/b2de3d83-a2cc-415d-b2bb-f63f9e3c4e2f/image.png" alt="SC-100 Badge">
                 </div>
                 <div class="cert-badge-code">SC-100</div>
               </div>
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="sc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a2e2e"/><stop offset="100%" stop-color="#0e7490"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#sc2)" stroke="#22d3ee" stroke-width="1.5"/>
-                    <circle cx="60" cy="50" r="15" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                    <line x1="60" y1="65" x2="60" y2="74" stroke="white" stroke-width="2.2" stroke-linecap="round" opacity="0.7"/>
-                    <circle cx="60" cy="50" r="5" fill="white" opacity="0.9"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">SEC OPERATIONS</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/0ba22331-acf9-4e8a-8ce3-b4f3d4b7b5d2/image.png" alt="SC-200 Badge">
                 </div>
                 <div class="cert-badge-code">SC-200</div>
               </div>
               <div class="cert-badge">
                 <div class="cert-badge-img">
-                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="sc3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a2e2e"/><stop offset="100%" stop-color="#0e7490"/></linearGradient></defs>
-                    <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#sc3)" stroke="#22d3ee" stroke-width="1.5"/>
-                    <circle cx="60" cy="46" r="11" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                    <rect x="44" y="60" width="32" height="20" rx="4" fill="none" stroke="white" stroke-width="2.2" opacity="0.85"/>
-                    <line x1="60" y1="57" x2="60" y2="60" stroke="white" stroke-width="2" opacity="0.55"/>
-                    <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="7" font-weight="600" letter-spacing="0.5">IDENTITY</text>
-                  </svg>
+                  <img src="https://images.credly.com/size/340x340/images/b2de3d83-a2cc-415d-b2bb-f63f9e3c4e2f/image.png" alt="SC-300 Badge">
                 </div>
                 <div class="cert-badge-code">SC-300</div>
               </div>
@@ -1417,44 +1298,19 @@ footer {
           <div class="cert-badges">
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="aws1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a08"/><stop offset="100%" stop-color="#232F3E"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#aws1)" stroke="#FF9900" stroke-width="2"/>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="none" stroke="rgba(255,153,0,0.15)" stroke-width="8"/>
-                  <path d="M36 60 C36 52 41 47 48 47 C49 42 54 38 60 38 C67 38 73 43 74 49 C79 49 84 54 84 60 C84 65 79 70 74 70 L46 70 C42 70 36 65 36 60Z" fill="#FF9900" opacity="0.92"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,153,0,0.6)" font-family="Arial,sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.5">SOLUTIONS ARCH</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="SAA-C03 Badge">
               </div>
               <div class="cert-badge-code">SAA-C03</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="aws2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a08"/><stop offset="100%" stop-color="#232F3E"/></linearGradient></defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#aws2)" stroke="#FF9900" stroke-width="2"/>
-                  <rect x="42" y="42" width="36" height="24" rx="5" fill="none" stroke="#FF9900" stroke-width="2.2"/>
-                  <circle cx="60" cy="54" r="5" fill="#FF9900" opacity="0.9"/>
-                  <line x1="48" y1="74" x2="48" y2="80" stroke="#FF9900" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-                  <line x1="60" y1="74" x2="60" y2="80" stroke="#FF9900" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-                  <line x1="72" y1="74" x2="72" y2="80" stroke="#FF9900" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,153,0,0.6)" font-family="Arial,sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.5">AWS DEVELOPER</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="DVA-C02 Badge">
               </div>
               <div class="cert-badge-code">DVA-C02</div>
             </div>
             <div class="cert-badge">
               <div class="cert-badge-img">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="gcp1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a1929"/><stop offset="100%" stop-color="#1565c0"/></linearGradient>
-                  </defs>
-                  <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" fill="url(#gcp1)" stroke="#4285f4" stroke-width="1.5"/>
-                  <!-- G logo shape -->
-                  <path d="M60 36 L75 60 L60 52 L45 60 Z" fill="#4285f4" opacity="0.9"/>
-                  <path d="M45 60 L60 52 L60 80 Z" fill="#34a853" opacity="0.85"/>
-                  <path d="M75 60 L60 52 L60 80 Z" fill="#fbbc05" opacity="0.75"/>
-                  <text x="60" y="105" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Arial,sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.5">ASSOC CLOUD ENG</text>
-                </svg>
+                <img src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png" alt="ACE Badge">
               </div>
               <div class="cert-badge-code">ACE</div>
             </div>
